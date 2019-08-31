@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="{{ site.description }}" name="description">
+  <title>Catskull Records</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <div class="flex-container">
+
+    <div class="box">
+      <div style="line-height: 0; text-align: center;">
+        <img style="width: 85%; margin-top: 1rem; margin-bottom: 1rem; image-rendering: pixelated;"
+          src="/images/logo.png" />
+      </div>
+      <div class="box-shadow" style="height: 4px; left: 30px; bottom: -34px; width: calc(100%  - 4px);"></div>
+      <div class="box-shadow" style="width: 4px; top: 30px; right: -34px; height: calc(100% - 4px);"></div>
+    </div>
+
+  </div>
+
+  <div class="flex-container">
+
+    {% for post in site.posts %}
+    <a href="{{ post.external_url }}" target="_blank">
+      <div class="box item">
+        <img src="{{ post.art_path }}" />
+        {% assign today_date = 'now' | date: '%s' %}
+        {% assign release_date = post.date | date: '%s' %}
+        {% assign diffSeconds = today_date | minus: release_date %}
+        {% assign diffDays = diffSeconds | divided_by: 3600 | divided_by: 24 %}
+        {% if diffDays < 90  %}
+        <div class="new"></div>
+        {% endif %}
+        <div class="munro description">
+          <div class="album-artist">
+            {{ post.artist }}
+          </div>
+          <br>
+          <div class="album-title">
+            {{ post.title }}
+          </div>
+        </div>
+        <div class="box-shadow" style="height: 4px; left: 30px; bottom: -34px; width: calc(100%  - 4px);"></div>
+        <div class="box-shadow" style="width: 4px; top: 30px; right: -34px; height: calc(100% - 4px);"></div>
+      </div>
+    </a>
+    {% endfor %}
+
+  </div>
+
+</body>
+
+</html>

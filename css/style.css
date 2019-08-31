@@ -1,0 +1,118 @@
+html {
+  min-height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background: -webkit-linear-gradient( to left top, blue, red);
+  background: -moz-linear-gradient( to left top, blue, red);
+  background: -ms-linear-gradient( to left top, blue, red);
+  background: -o-linear-gradient( to left top, blue, red);
+  background: linear-gradient( to left top, blue, red);
+  background-image: url('../images/background.png'),
+  linear-gradient(140deg, rgba(138,122,255,1) 0%, rgba(253,111,214,1) 33%, rgba(253,157,163,1) 66%, rgba(255,238,157,1) 100%);
+  image-rendering: pixelated;
+}
+
+body {
+  max-width: 1000px;
+  margin: 0 auto 9% auto;
+}
+
+a {
+  color: black;
+}
+
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+img {
+  max-width: 100%;
+  image-rendering: initial;
+}
+
+.box {
+  background-color: #c0c0c0;
+  top: 50px;
+  box-shadow:
+    -8px 8px 0px #2319fa,
+    -4px 4px 0px #2319fa,
+    30px 30px 0px rgba(35, 25, 248, 0.3);
+  position: relative;
+  display: inline-block;
+  margin-bottom: 25px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.box-shadow {
+  position: absolute;
+  background-color: rgba(35, 25, 248, 0.3);
+  cursor: default;
+}
+
+.box-content {
+  position: relative;
+  bottom: -4px;
+}
+
+.box-content-shadow {
+  position: absolute;
+  background-color: #2319fa;
+}
+
+.new {
+  position: absolute;
+  top: 66%;
+  left: -25px;
+  background-image: url('../images/arrow.png');
+  height: 35px;
+  width: 71px;
+  padding: 5px;
+  animation: new 2s infinite;
+}
+
+@keyframes new {
+  0% {
+    left: -25px;
+  }
+  50% {
+    left: -20px;
+  }
+  100% {
+    left: -25px;
+  }
+}
+
+@font-face {
+    font-family: 'munro';
+    src: url('../fonts/Nintendo-DS-BIOS.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.munro {
+  font-family: 'munro';
+}
+
+.item {
+  margin-bottom: 45px;
+  max-width: 17rem;
+  margin-left: 40px;
+}
+
+.description {
+  margin: 10px;
+}
+
+.album-artist {
+  font-size: 35px;
+}
+
+.album-title {
+  font-size: 25px;
+}

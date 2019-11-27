@@ -33,7 +33,7 @@
   <div class="flex-container">
 
     {% for post in site.posts %}
-    <a href="{{ post.external_url }}" target="_blank">
+    <a href="{{ post.external_url }}" target="_blank" rel="noopener">
       <div class="box item">
         <picture>
           <source type="image/webp" srcset="{{ post.art_path }}.webp">

@@ -29,7 +29,10 @@
     {% for post in site.posts %}
     <a href="{{ post.external_url }}" target="_blank">
       <div class="box item">
-        <img src="{{ post.art_path }}" />
+        <picture>
+          <source type="image/webp" srcset="{{ post.art_path }}.webp">
+          <img src="{{ post.art_path }}.jpg" alt="{{ post.artist }} - {{ post.title }} album art" />
+        </picture>
         {% assign today_date = 'now' | date: '%s' %}
         {% assign release_date = post.date | date: '%s' %}
         {% assign diffSeconds = today_date | minus: release_date %}
